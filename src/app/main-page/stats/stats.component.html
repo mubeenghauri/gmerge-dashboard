@@ -1,0 +1,73 @@
+<div class="container m-5 p-5">
+
+	<div class="row text-center" id="spinner">
+		<div class="col-md-3"></div>
+		
+		<div class="col-md-6 text-center pl-5 ml-5">
+			<mat-progress-spinner
+			color="primary"
+			mode="indeterminate"
+			value="100">
+			</mat-progress-spinner>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+
+	<div class="container" id="main">
+		<div class="row" >
+		<div class="col-md-12 text-center">
+			<mat-form-field appearance="fill">
+			  <mat-label>Select Date :</mat-label>
+			  <mat-select (selectionChange)="updateStats($event)">
+				<mat-option *ngFor="let date of dates" [value]="date.value">
+				  {{date.value}}
+				</mat-option>
+			  </mat-select>
+			</mat-form-field>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<mdb-card class="text-center mb-3" >
+			  <mdb-card-body>
+				<mdb-card-title>
+				  <mdb-card-text>Total Emails Sent</mdb-card-text>
+				</mdb-card-title>
+				  <h5>{{totalEmailsSent}}</h5>
+			  </mdb-card-body>
+			</mdb-card>
+		</div>
+		<div class="col-md-3">
+			<mdb-card class="text-center mb-3" >
+			  <mdb-card-body>
+				<mdb-card-title>
+				  <mdb-card-text>Email Opened</mdb-card-text>
+				</mdb-card-title>
+				  <h5>{{emailOpened}}</h5>
+			  </mdb-card-body>
+			</mdb-card>
+		</div>
+		<div class="col-md-3">
+			<mdb-card class="text-center mb-3" >
+			  <mdb-card-body>
+				<mdb-card-title>
+				  <mdb-card-text>Opened Percentage</mdb-card-text>
+				</mdb-card-title>
+				  <h5>{{openedPercentage}}%</h5>
+			  </mdb-card-body>
+			</mdb-card>
+		</div>
+		<div class="col-md-3">
+			<mdb-card class="text-center mb-3" >
+			  <mdb-card-body>
+				<mdb-card-title>
+				  <mdb-card-text>Replies</mdb-card-text>
+				</mdb-card-title>
+				  <h5>{{replies}}</h5>
+			  </mdb-card-body>
+			</mdb-card>			
+		</div>
+	</div>
+	</div>
+	
+</div>
