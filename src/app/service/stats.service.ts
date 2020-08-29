@@ -18,7 +18,7 @@ export class StatsService {
   	headers.append('Access-Control-Allow-Origin', '*');
 
 
-  	let url = "http://localhost:8000/api/stats";
+  	let url = "http://api.jumpstartsol.com/api/stats";
   	return this.http.get(url, {headers: headers});
 
   }
